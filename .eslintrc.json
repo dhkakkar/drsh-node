@@ -1,0 +1,33 @@
+{
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "root": [
+          "."
+        ],
+        "map": [
+          [
+            "@",
+            "./"
+          ],
+          [
+            "@config",
+            "./config"
+          ],
+          [
+            "@env",
+            "config/env.js"
+          ]
+        ],
+        "extensions": [
+          ".js",
+          ".json"
+        ]
+      }
+    }
+  },
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "parser": "@babel/eslint-parser"
+}

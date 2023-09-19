@@ -1,0 +1,32 @@
+{
+  "TIME_ZONE": "Asia/Kolkata",
+  "DATE_FORMAT":"DD/MM/YYYY",
+  "DATE_FORMAT_QUERY_PARAM":"DD-MM-YYYY",
+  "DATETIME_FORMAT_12":"DD/MM/YYYY hh:mmA",
+  "DATETIME_FORMAT_QUERY_PARAM_12":"DD-MM-YYYY hh:mmA",
+  "DATETIME_FORMAT_24":"DD-MM-YYYY hh:mm",
+  "DATETIME_FORMAT_QUERY_PARAM_24":"DD-MM-YYYY hh:mm",
+  "S3": {
+    "bucket": "storage",
+    "cloudfrontCDN": "https://xxxxxxx.cloudfront.net"
+  },
+  "ExtAPIs":{
+    "sms":{
+      "url":"https://igg-api.drsafehands.org:26790/api/sms/sendOTP",
+      "method":"post",
+      "body":["otpCode","destinationNumber"]
+    }
+  },
+  "paymentUrl":"https://pay-test.drsafehands.org",
+  "slotAmount":{
+    "15min":2500,
+    "30min":5000,
+    "45min":7500,
+    "60min":10000
+  },
+  "cancellationFeePercent":10,
+  "rescheduleFeePercent":20,
+  "appointments":{
+    "scheduleTiming":"30m"
+  }
+}

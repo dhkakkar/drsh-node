@@ -1,0 +1,48 @@
+{
+    "extBaseUrl": "https://igg-api.drsafehands.org:26790",
+    "APIS": {
+        "wallet_create": {
+            "url": "<__extBaseUrl__>/api/wallets/create",
+            "method": "post",
+            "body": {
+                "email": "String",
+                "firstName": "String",
+                "lastName": "String",
+                "phoneNumber": "String",
+                "externalUserID": "String"
+            },
+            "headers":{
+                "Apikey":true
+            }
+        },
+        "wallet_getByExternalID": {
+            "url": "<__extBaseUrl__>/api/users/getByExternalID/:externalUserID",
+            "method": "get",
+            "headers":{
+                "Apikey":true
+            }
+        },
+        "wallet_debit":{
+            "url":"<__extBaseUrl__>/api/wallets/debit/:externalUserID",
+            "method": "put",
+            "body": {
+                "amount": "Number",
+                "reason": "String"
+            },
+            "headers":{
+                "Apikey":true
+            }
+        },
+        "wallet_refund":{
+            "url":"<__extBaseUrl__>/api/wallets/refund/:externalUserID",
+            "method": "put",
+            "body": {
+                "amount": "Number",
+                "reason": "String"
+            },
+            "headers":{
+                "Apikey":true
+            }
+        }
+    }
+}

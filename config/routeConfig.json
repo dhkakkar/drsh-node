@@ -1,0 +1,242 @@
+[
+  {
+    "endPoint": "/:tenant/:version/:platform/REGISTER/:userType/:loginType",
+    "method": "post",
+    "middlewares": [
+      "user/googleSignUp",
+      "user/smsSignUp",
+      "shared/auth/createOtp",
+      "shared/auth/createAuthToken",
+      "wallet/create"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/ADMIN/CREATE",
+    "method": "post",
+    "middlewares": [
+      "shared/auth/verifyAuth",
+      "admin/create"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/SEARCH/:model",
+    "method": "get",
+    "middlewares": [
+      "shared/auth/verifyAuth",
+      "shared/seach"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/ADMIN/LIST",
+    "method": "get",
+    "middlewares": [
+      "shared/auth/verifyAuth",
+      "admin/list"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/ADMIN/LOGIN",
+    "method": "post",
+    "middlewares": [
+      "admin/login",
+      "shared/auth/createAuthToken"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/LOGIN/:userType",
+    "method": "post",
+    "middlewares": [
+      "user/login",
+      "shared/auth/createAuthToken"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/RESETPASSWORD",
+    "method": "post",
+    "middlewares": [
+      "shared/auth/verifyAuth",
+      "shared/auth/resetPassword"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/VERIFYOTP/:otpType",
+    "method": "post",
+    "middlewares": [
+      "shared/auth/verifyOtp",
+      "shared/auth/createAuthToken",
+      "wallet/create"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/BOOK/APPOINTMENT",
+    "method": "post",
+    "middlewares": [
+      "shared/auth/verifyAuth",
+      "appointment/book",
+      "wallet/debit",
+      "calendar/addToCalendar"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/LIST/APPOINTMENT",
+    "method": "get",
+    "middlewares": [
+      "shared/auth/verifyAuth",
+      "appointment/list"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/GET/APPOINTMENT/:appointmentId",
+    "method": "get",
+    "middlewares": [
+      "shared/auth/verifyAuth",
+      "appointment/get"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/CANCEL/APPOINTMENT/:appointmentId",
+    "method": "get",
+    "middlewares": [
+      "shared/auth/verifyAuth",
+      "appointment/cancel",
+      "wallet/refund"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/RESCHEDULE/APPOINTMENT/:appointmentId",
+    "method": "post",
+    "middlewares": [
+      "shared/auth/verifyAuth",
+      "appointment/reschedule",
+      "appointment/cancel",
+      "appointment/book",
+      "wallet/debit",
+      "calendar/addToCalendar"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/ADMIN/CREATE/SCHEDULE",
+    "method": "post",
+    "middlewares": [
+      "shared/auth/verifyAuth",
+      "appointment/validateSchedule",
+      "appointment/addAvailability",
+      "appointment/schedule"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/ADMIN/GETSCHEDULE/:doctorId",
+    "method": "get",
+    "middlewares": [
+      "appointment/getSchedules"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/ADMIN/GETSCHEDULES",
+    "method": "get",
+    "middlewares": [
+      "appointment/allSchedules"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/ADMIN/SCHEDULE/AVAILABILITY",
+    "method": "get",
+    "middlewares": [
+      "shared/auth/verifyAuth",
+      "appointment/getAvailability"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/ADMIN/SCHEDULE/AVAILABILITY/:id",
+    "method": "get",
+    "middlewares": [
+      "shared/auth/verifyAuth",
+      "appointment/getAvailabilityById"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/USER/LIST",
+    "method": "get",
+    "middlewares": [
+      "shared/addPagination",
+      "user/list"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/GETUSER/:userId",
+    "method": "get",
+    "middlewares": [
+      "user/getUser"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/GETADMIN/:userId",
+    "method": "get",
+    "middlewares": [
+      "admin/getAdmin"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/GET/WALLET",
+    "method": "get",
+    "middlewares": [
+      "shared/auth/verifyAuth",
+      "wallet/get"
+    ]
+  },
+  {
+    "endPoint": "/test/:calenderType",
+    "method": "get",
+    "middlewares": [
+      "calendar/test"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/DASHBOARD/ALLCOUNT",
+    "method": "get",
+    "middlewares": [
+      "shared/auth/verifyAuth",
+      "dashboard/allcount"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/LIST/TODAYAPPOINTMENT",
+    "method": "get",
+    "middlewares": [
+      "shared/auth/verifyAuth",
+      "appointment/todaylist"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/USER/STATUSCHANGE/:userId/:status",
+    "method": "get",
+    "middlewares": [
+      "shared/auth/verifyAuth",
+      "user/statusChange"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/ADMIN/STATUSCHANGE/:adminId/:status",
+    "method": "get",
+    "middlewares": [
+      "shared/auth/verifyAuth",
+      "admin/statusChange"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/ADMIN/UPDATE/:adminId",
+    "method": "post",
+    "middlewares": [
+      "shared/auth/verifyAuth",
+      "admin/update"
+    ]
+  },
+  {
+    "endPoint": "/:tenant/:version/:platform/LIST/APPOINTMENTHISTORY",
+    "method": "get",
+    "middlewares": [
+      "shared/auth/verifyAuth",
+      "appointment/history"
+    ]
+  }
+]

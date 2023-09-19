@@ -1,0 +1,13 @@
+# directory to be igonre
+node_modules/
+dist/
+ignore/
+
+# Environment Variables
+.env
+.env-client
+
+# Log Files
+
+*.log
+

@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "dr-safe-hand",
+  "private_key_id": "d437ed9acff3e4f3ac8982196d30758d7a9973c8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDk05hWIqx+pwlw\n3MykjHQNTYNXkDQpico6gwrCCc+m2OJpJsRSUZMMWTSeXpbJ/2gsHKjOzyWL3fRE\n8zHlUbpmz6LSU9yhoqr9b6IVDwMkv54Kha4/QCzbmS05IxfTPdyftIJSuhLfDojg\nj/4r1nj6nuLotEIyUHyk/TroeLMg/xkHpS8ZEqKIBuuvfvlO5/GSvhTzyJTr4eJ1\n6fCVctZ2wQiq+m+EcWEmhKo5u7a42B3PnRGwvxX18z92DiIWZnY91K6e9zTOKJ2p\nTd3sLFFKbHoBhCStMo2gWwYU/R5sl9UDeKYjfwzhPvQrMBy20VETtAJa/c6IhGqJ\nGQsJdl7bAgMBAAECggEAS88OGPtDynHsXsfHxHwDtqSHbusHXPuZU+k2FzLI6K3R\n1KRTRjJgVSb4l78ela1YBcU458sY1U2jL3Sigyagao8/kg7WeXY6z9u8Bt4CXJpe\n8X14TNwmAFqu8M7/haxo+0ACLQYYWm2mSz9pJXzYd69L3WxawfCIWuDKM1pJfhRk\n/NF0n17EBW4picb2xaONacSRMWMqOwnmQbTf8ax03b+e/9c+OBA9YWkGyzh3rNZn\nLb8h43tU2ZsIL5aJ/KAoF1TprnOW2hYLsVKEcWS3qGzmpFB7xXlqlT3yj5FCYpEt\n+OpI2n6sFeaZIrpyVEJ/N0D2gLFOfOl3+cveNtFhAQKBgQD3rb5HehThu4haT/is\nEbuYGfpMzXtaCPu/Ggz4HsHiLVeshBPJ1llkNv1Z3jVHgMXKCNvCh3KwMMQ1JyoC\nupnLXv8NAhJ8oi6aTLiYcndRdtW8oCWs8HYyWI2X86c/v2Bj+9OTWAPsxv5N8VSP\nKltSXxru4b4JlwskYglo/7OpqQKBgQDsg7TlKKq03UI2KS/kk9THfLP+mYQt4/tw\nwfsipPQJe+rQLc62GdTz3GY0An2In9pAG5Lnv+ADbLUmewzybBex827N6AJGcT+O\nsC1BqAHcxWLfInbNgN9Bo8OHQApi4EyQamab41nYXHADHwbiFGv0l4skbsf8PTfB\nHWT/Y5A+4wKBgAzo6XogSuZZOAo9EOEnK3gKIpnOPBe9UCHt4a8tKz32zxMW71Ed\n8xreIuaERpKri6O0QoApPzkf0ZpTqETsJQgMs46iBQSqD3PLe/O2Q7HjV9C1KEGT\nZxXIt9irwpP4DbYocibD97BnzumRIq8zrf7lJio9agJl9Ra4ZXUrntnBAoGAYx/0\nEdMQcIsG9AIhE3CtzgnCumMG1eDmAeUa5vMxYEQyLpv0Nbfv22C06PleOYOdih7E\nXCK7tVO7PGx4CaYp7Cf1eZDSW0mddKT74reSSD/l51Tfa9OmPjFvgmDhuXz+OcyO\nQqlvf1GGlJhNXzVl5XYaF+PiJyJVGrfCG5NT4jcCgYEAhGwenHWHuRH8I+Y+gIu+\nwGQVvUILmlYheXvXzxl+pNE7V/p5DVB80sYFddaYke1DJXanLrRW+C6vWCfrJ9Pa\nAa8xaDuYQ89+15b7ZWvVPQ0e8QEBaMBTiR4PEkCHcnjLjKKpTngSz9d6ema3OIrQ\n45R9hskTDULKT2VCCi+/pvQ=\n-----END PRIVATE KEY-----\n",
+  "client_email": "google-calendar-api@dr-safe-hand.iam.gserviceaccount.com",
+  "client_id": "112770427183269579836",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/google-calendar-api%40dr-safe-hand.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
