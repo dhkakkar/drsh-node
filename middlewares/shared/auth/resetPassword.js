@@ -17,8 +17,30 @@ module.exports.run = async (req, res, next) => {
             throw new UnauthorizedError('User does not exist');
         }
         const dbuser = { ...result[0] };
-        const isCompared = await compareText(req.body.oldPassword,dbuser.password);
-        if (isCompared) {
+        if(dbuser.password){
+            const isCompared = await compareText(req.body.oldPassword,dbuser.password);
+            if (isCompared) {
+                let update = false
+                let u
+                if (user.type == "USER") {
+                    update = await userDao.updateUserById(user._id, {password:req.body.newPassword})
+                } else if (user.type == "ADMIN") {
+                    update = await adminDao.updateUserById(user._id, {password:req.body.newPassword})
+                } 
+                if(!update){
+                    throw new MongoError(`${user.type.toLowerCase()} not updated`)
+                }
+                res.locals.rootData = dbuser;
+                delete dbuser.password;
+                delete dbuser.__v;
+                delete res.locals.rootData.password;
+                delete res.locals.rootData.__v;
+                res.user = dbuser;
+                next();
+              } else {
+                throw new UnauthorizedError('Old Password Wrong');
+              }
+        }else{
             let update = false
             let u
             if (user.type == "USER") {
@@ -36,9 +58,7 @@ module.exports.run = async (req, res, next) => {
             delete res.locals.rootData.__v;
             res.user = dbuser;
             next();
-          } else {
-            throw new UnauthorizedError('Wrong Password');
-          }
+        }
     } catch (error) {
         next(error)
     }
