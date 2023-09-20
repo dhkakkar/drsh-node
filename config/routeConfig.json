@@ -232,6 +232,14 @@
     ]
   },
   {
+    "endPoint": "/:tenant/:version/:platform/USER/UPDATE/:userId",
+    "method": "post",
+    "middlewares": [
+      "shared/auth/verifyAuth",
+      "user/update"
+    ]
+  },
+  {
     "endPoint": "/:tenant/:version/:platform/LIST/APPOINTMENTHISTORY",
     "method": "get",
     "middlewares": [

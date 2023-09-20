@@ -10,6 +10,8 @@ module.exports.run = async (req, res, next) => {
             result = await userDao.getUserByKeyValue("_id", user._id)
         } else if (user.type == "ADMIN") {
             result = await adminDao.getUserByKeyValue("_id", user._id)
+        } else if (user.type == "SUPERADMIN") {
+            result = await adminDao.getUserByKeyValue("_id", user._id)
         } else {
             throw new Error("Access denied..")
         }
@@ -25,6 +27,8 @@ module.exports.run = async (req, res, next) => {
                 if (user.type == "USER") {
                     update = await userDao.updateUserById(user._id, {password:req.body.newPassword})
                 } else if (user.type == "ADMIN") {
+                    update = await adminDao.updateUserById(user._id, {password:req.body.newPassword})
+                } else if (user.type == "SUPERADMIN") {
                     update = await adminDao.updateUserById(user._id, {password:req.body.newPassword})
                 } 
                 if(!update){
@@ -46,6 +50,8 @@ module.exports.run = async (req, res, next) => {
             if (user.type == "USER") {
                 update = await userDao.updateUserById(user._id, {password:req.body.newPassword})
             } else if (user.type == "ADMIN") {
+                update = await adminDao.updateUserById(user._id, {password:req.body.newPassword})
+            } else if (user.type == "SUPERADMIN") {
                 update = await adminDao.updateUserById(user._id, {password:req.body.newPassword})
             } 
             if(!update){
