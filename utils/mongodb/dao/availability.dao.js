@@ -22,7 +22,7 @@ const getAvailabilityByDoctorId = async (doctorId) => {
 
 const getAvailabilityById = async (id) => {
     try {
-        let result = await AvailabilityModel.find({_id:new ObjectId('64faebb27e8d146e34f00a45')}).populate('doctorId').exec();
+        let result = await AvailabilityModel.find({_id:new ObjectId(id)}).populate('doctorId').exec();
         result = JSON.parse(JSON.stringify(result))
         return result
     } catch (error) {
