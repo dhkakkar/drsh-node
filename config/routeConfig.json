@@ -125,6 +125,16 @@
     ]
   },
   {
+    "endPoint": "/:tenant/:version/:platform/ADMIN/UPDATE/SCHEDULE/:availabilityId",
+    "method": "post",
+    "middlewares": [
+      "shared/auth/verifyAuth",
+      "appointment/getAvailabilityById",
+      "appointment/updateAvailability",
+      "appointment/updateSchedule"
+    ]
+  },
+  {
     "endPoint": "/:tenant/:version/:platform/ADMIN/GETSCHEDULE/:doctorId",
     "method": "get",
     "middlewares": [
@@ -229,14 +239,6 @@
     "middlewares": [
       "shared/auth/verifyAuth",
       "admin/update"
-    ]
-  },
-  {
-    "endPoint": "/:tenant/:version/:platform/USER/UPDATE/:userId",
-    "method": "post",
-    "middlewares": [
-      "shared/auth/verifyAuth",
-      "user/update"
     ]
   },
   {

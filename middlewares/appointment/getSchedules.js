@@ -14,7 +14,7 @@ module.exports.run = async(req, res, next) => {
 
         const result = await scheduleDao.getDoctorScheduleByDateRange(doctorId, {fromDate, toDate})
         result.forEach(e=>{
-            e.date=moment(e.date).format("DD/MM/YYYY")
+            e._date=moment(e.date).format("DD/MM/YYYY")
         })
         const startDate = moment(fromDate)
         const now = startDate.clone(), dates = [];
@@ -55,10 +55,10 @@ module.exports.run = async(req, res, next) => {
                     break;
             }
             const date = now.format('DD/MM/YYYY');
-            const schedules = result.filter(e=>e.date == date)
+            const schedules = result.filter(e=>e._date == date)
             if(schedules.length > 0){
                 dateWiseSchedule.push({
-                    date,
+                    date:now.toISOString(),
                     day,
                     schedules
                 })

@@ -22,6 +22,11 @@ const schema = new Schema({
         type: Number,
         required:true
     },
+    availabilityId : {
+        type:ObjectId,
+        required:true,
+        ref:"availability"
+    },
     doctorId: {
         type: ObjectId,
         required: true,

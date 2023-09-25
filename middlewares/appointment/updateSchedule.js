@@ -5,7 +5,7 @@ const { BadRequestError } = require("../../utils/handler/error");
 module.exports.run = async (req, res, next) => {
     try {
         let doctorId = req.body.doctorId
-        let availabilityId = req.body.availabilityId
+        const availabilityId = req.params.availabilityId
         // if (req.user.type == "ADMIN") {
         //     req.user._id
         // } else if (req.user.type == "SUPERADMIN") {

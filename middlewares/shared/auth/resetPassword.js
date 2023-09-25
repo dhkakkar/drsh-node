@@ -45,26 +45,26 @@ module.exports.run = async (req, res, next) => {
                 throw new UnauthorizedError('Old Password Wrong');
               }
         }else{
-            let update = false
-            let u
-            if (user.type == "USER") {
-                update = await userDao.updateUserById(user._id, {password:req.body.newPassword})
-            } else if (user.type == "ADMIN") {
-                update = await adminDao.updateUserById(user._id, {password:req.body.newPassword})
-            } else if (user.type == "SUPERADMIN") {
-                update = await adminDao.updateUserById(user._id, {password:req.body.newPassword})
-            } 
-            if(!update){
-                throw new MongoError(`${user.type.toLowerCase()} not updated`)
-            }
-            res.locals.rootData = dbuser;
-            delete dbuser.password;
-            delete dbuser.__v;
-            delete res.locals.rootData.password;
-            delete res.locals.rootData.__v;
-            res.user = dbuser;
-            next();
-        }
+                let update = false
+                let u
+                if (user.type == "USER") {
+                    update = await userDao.updateUserById(user._id, {password:req.body.newPassword})
+                } else if (user.type == "ADMIN") {
+                    update = await adminDao.updateUserById(user._id, {password:req.body.newPassword})
+                } else if (user.type == "SUPERADMIN") {
+                    update = await adminDao.updateUserById(user._id, {password:req.body.newPassword})
+                }
+                if(!update){
+                    throw new MongoError(`${user.type.toLowerCase()} not updated`)
+                }
+                res.locals.rootData = dbuser;
+                delete dbuser.password;
+                delete dbuser.__v;
+                delete res.locals.rootData.password;
+                delete res.locals.rootData.__v;
+                res.user = dbuser;
+                next();
+          }
     } catch (error) {
         next(error)
     }

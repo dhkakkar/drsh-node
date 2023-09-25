@@ -64,7 +64,7 @@ module.exports.run = async (req, res, next) => {
             const walletData = _walletData[0]
             const externalUserID = walletData.externalUserID;
             const walletInfo = await httpRequest("wallet_getByExternalID", null, { params: { externalUserID } })
-            if(walletInfo.balance < appointmentData.amount ){
+            if(walletInfo.wallet.balance < appointmentData.amount ){
                 throw new BadRequestError("Low balance. Please recharge your wallet")
             }
             // wallet info
@@ -75,8 +75,6 @@ module.exports.run = async (req, res, next) => {
             
             if(res.locals.isRescheduling){
                 let appointmentDetails = res.locals.appointmentDetails
-            
-                
                 appointmentDetails = appointmentDetails[0]
                 const bookingAmount = appointmentDetails.amount;
                 const chargedAmount = bookingAmount * (appConfig.rescheduleFeePercent / 100)

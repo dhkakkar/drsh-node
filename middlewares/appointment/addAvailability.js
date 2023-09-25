@@ -5,7 +5,8 @@ module.exports.run = async(req, res, next)=>{
         const availability = req.body;
         availability.fromDate = moment(req.body.fromDate, "DD/MM/YYYY");
         availability.toDate = moment(req.body.toDate, "DD/MM/YYYY");
-        availabilityDao.saveAvailability(availability)
+        const result = await availabilityDao.saveAvailability(availability)
+        req.body.availabilityId = result._id;
         next()
 
     } catch (error) {

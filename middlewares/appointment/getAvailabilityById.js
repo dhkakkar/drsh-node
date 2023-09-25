@@ -2,7 +2,7 @@ const { BadRequestError } = require('../../utils/handler/error')
 const availabilityDao = require('../../utils/mongodb/dao/availability.dao')
 module.exports.run = async(req, res, next)=>{
     try {
-        const id = req.params.id
+        const id = req.params.id || req.params.availabilityId
         const result =await availabilityDao.getAvailabilityById(id)
         if(result.length > 0){
             res.locals.rootData = result[0]

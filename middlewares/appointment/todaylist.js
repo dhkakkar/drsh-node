@@ -12,6 +12,7 @@ module.exports.run = async(req, res, next)=>{
         }else{
             throw new Error("User Type not accessible")
         }
+        
         res.locals.rootData = result
         next()
 

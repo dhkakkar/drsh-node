@@ -22,9 +22,6 @@ const getAppointmentHistoryByKeyValue = async (key, value) => {
     // tomorrow = tomorrow.format("YYYY-MM-DD")
     if (key === '_id' || key === 'doctorId' || key === 'bookedPerson') value = new ObjectId(value);
     query[key] = value;
-    query['date'] = { 
-      $lt: new Date(today)
-    };
     const user = await AppointmentModel.find(query).populate('userId').populate('doctorId').populate("slotId").exec();
     const output = JSON.parse(JSON.stringify(user));
     return output;
@@ -37,9 +34,6 @@ const getHistoryAppointments = async () => {
   try {
     const query = {};
     const today = moment().format("YYYY-MM-DD");
-    query['date'] = { 
-      $lt: new Date(today)
-    };
     const user = await AppointmentModel.find(query).populate('userId').populate('doctorId').populate("slotId").exec();
     const output = JSON.parse(JSON.stringify(user));
     return output;
